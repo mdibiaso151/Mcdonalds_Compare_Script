@@ -12,9 +12,9 @@ headers=[
     "Platform"] 
     
 
-df1 = pd.read_csv('1monthback.csv', usecols=headers)
+df1 = pd.read_csv('data/1monthback.csv', usecols=headers)
   
-df2 = pd.read_csv('current_month.csv', usecols=headers)
+df2 = pd.read_csv('data/current_month.csv', usecols=headers)
     
 
 
@@ -70,7 +70,7 @@ pending=pd.DataFrame(pending_df,columns=headers_new)
 
 
 # Write the remediated data to a new sheet in an Excel file
-with pd.ExcelWriter('remediated.xlsx') as writer:
+with pd.ExcelWriter('data/remediated.xlsx') as writer:
     remeadiations.to_excel(writer, sheet_name='remediated',index=False)
     pending.to_excel(writer, sheet_name='pending',index=False)
 
